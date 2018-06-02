@@ -460,7 +460,8 @@ void pciexp_scan_bus(struct bus *bus, unsigned int min_devfn,
 void pciexp_scan_bridge(struct device *dev)
 {
 	do_pci_scan_bridge(dev, pciexp_scan_bus);
-	pciexp_enable_ltr(dev);
+	(void)pciexp_enable_ltr;
+	//pciexp_enable_ltr(dev);
 }
 
 /** Default device operations for PCI Express bridges */
